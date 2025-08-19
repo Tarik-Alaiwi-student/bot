@@ -72,15 +72,16 @@ def job():
     print("Wysłano raport:", prices)
 
 # Harmonogram
+schedule.every().day.at("04:00").do(job)
 schedule.every().day.at("08:00").do(job)
-schedule.every().day.at("12:00").do(job)
+schedule.every().day.at("14:00").do(job)
 schedule.every().day.at("16:00").do(job)
-schedule.every().day.at("20:00").do(job)
-schedule.every().day.at("00:10").do(job)
+schedule.every().day.at("18:00").do(job)
+schedule.every().day.at("21:30").do(job)
 
-job()
 
 print("Bot uruchomiony...")
 while True:
     schedule.run_pending()
     time.sleep(1)
+
