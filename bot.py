@@ -64,7 +64,7 @@ def send_email(prices):
 
     with smtplib.SMTP_SSL("smtp.gmail.com", 465) as server:
         server.login(EMAIL, EMAIL_PASSWORD)
-        server.sendmail(EMAIL, [RECIPIENT, RECIPIENT2], msg.as_string())
+        server.sendmail(EMAIL, [RECIPIENT], msg.as_string())
 
 def job():
     prices = asyncio.run(get_prices())
@@ -84,5 +84,6 @@ print("Bot uruchomiony...")
 while True:
     schedule.run_pending()
     time.sleep(1)
+
 
 
